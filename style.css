@@ -1,0 +1,110 @@
+
+:root {
+    --accent-color: #39FF14;
+    --accent-glow: rgba(57, 255, 20, 0.5);
+    --accent-darker: #28b40f;
+    --bg-color: #000000;
+    --text-color: #E0E0E0;
+}
+
+/* gradient bg*/
+body {
+    color: var(--text-color);
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: var(--bg-color);
+    transition: background-color 0.3s, color 0.3s;
+    
+    background: linear-gradient(-45deg, #000000, #170101, #01150a, #170101);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+}
+
+/* keyfrme for bg animation */
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/*  glow effect */
+.glow-text {
+    color: var(--accent-color);
+    text-shadow: 0 0 5px var(--accent-glow), 0 0 10px var(--accent-glow), 0 0 15px var(--accent-glow);
+}
+
+.glow-border {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 8px var(--accent-glow);
+}
+
+/* hexagon image box*/
+.hexagon-image {
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    filter: drop-shadow(0 0 10px var(--accent-glow));
+}
+
+
+/* Typing cursor effect */
+.typing-cursor {
+    display: inline-block;
+    width: 10px;
+    height: 1.2em;
+    background-color: var(--accent-color);
+    animation: blink 1s infinite;
+    margin-left: 4px;
+    box-shadow: 0 0 5px var(--accent-glow);
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Section header styling */
+.section-header::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: var(--accent-color);
+    margin-top: 8px;
+    box-shadow: 0 0 8px var(--accent-glow);
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #111;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-darker);
+}
+
+/* bgstyles */
+body {
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    transition: background-color 0.3s, color 0.3s;
+}

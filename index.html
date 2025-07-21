@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya Waghmare | Cybersecurity Professional</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Source+Code+Pro:wght@400;600&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="antialiased transition-colors duration-300">
+
+    <header class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold glow-text"> /- A$W> </a>
+            <nav class="hidden md:flex items-center space-x-6">
+                <a href="#about" class="hover:text-white transition-colors duration-300">01. About</a>
+                <a href="#education" class="hover:text-white transition-colors duration-300">02. Education</a>
+                <a href="#skills" class="hover:text-white transition-colors duration-300">03. Skills</a>
+                <a href="#certifications" class="hover:text-white transition-colors duration-300">04. Certifications</a>
+                <a href="#projects" class="hover:text-white transition-colors duration-300">05. Projects</a>
+                <a href="#contact" class="hover:text-white transition-colors duration-300">06. Contact</a>
+
+                <a href="Aditya_Waghmare_Cybersecurity_Resume.pdf" target="_blank"
+                    class="px-4 py-2 border border-[var(--accent-color)] text-[var(--accent-color)] rounded-md hover:bg-[var(--accent-glow)] hover:text-black transition-all duration-300 resume-btn">
+                    Resume
+                </a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-[var(--accent-color)]">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 flex flex-col space-y-4">
+            <a href="#about" class="hover:text-white transition-colors duration-300">01. About</a>
+            <a href="#education" class="hover:text-white transition-colors duration-300">02. Education</a>
+            <a href="#skills" class="hover:text-white transition-colors duration-300">03. Skills</a>
+            <a href="#certifications" class="hover:text-white transition-colors duration-300">04. Certifications</a>
+            <a href="#projects" class="hover:text-white transition-colors duration-300">05. Projects</a>
+            <a href="#contact" class="hover:text-white transition-colors duration-300">06. Contact</a>
+            <div class="flex items-center justify-between pt-2">
+                <a href="Aditya_Waghmare_Cybersecurity_Resume.pdf" target="_blank"
+                    class="text-center px-4 py-2 border border-[var(--accent-color)] text-[var(--accent-color)] rounded-md hover:bg-[var(--accent-glow)] hover:text-black transition-all duration-300 resume-btn">
+                    Resume
+                </a>
+
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6">
+
+        <section id="hero" class="min-h-screen flex items-center">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center w-full">
+                <div class="flex flex-col justify-center items-start">
+                    <p class="text-lg text-[var(--accent-color)] font-mono mb-4">Hi, my name is</p>
+                    <h1 class="text-5xl md:text-7xl font-bold text-gray-100 mb-4">Aditya Waghmare.</h1>
+                    <h2 class="text-4xl md:text-6xl font-bold text-gray-400 mb-8 h-24 md:h-36">
+                        <span id="typing-text"></span><span class="typing-cursor"></span>
+                    </h2>
+                    <p class="max-w-xl text-gray-300 mb-8">
+                        Proactive BCA student with hands-on experience in penetration testing and vulnerability
+                        assessment (95+ security labs, CTFs).<br>
+                        <b>Top 6% on TryHackMe</b>.Seeking a challenging cybersecurity internship to apply
+                        practical skills and contribute to a dynamic security team.
+
+                    </p>
+                    <a href="#projects"
+                        class="px-6 py-3 border border-[var(--accent-color)] text-[var(--accent-color)] rounded-md text-lg hover:bg-[var(--accent-glow)] hover:text-black transition-all duration-300 flex items-center">
+                        View My Work <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+                    </a>
+                    
+                </div>
+                <!-- photu container -->
+                <div class="hidden md:flex justify-center items-center">
+                    <div class="relative w-[31rem] h-[34rem] group">
+                        <img src="photu.png"
+                            onerror="this.onerror=null;this.src='https://placehold.co/400x400/000000/FFFFFF?text=Aditya+Waghmare';"
+                            alt="Aditya Waghmare"
+                            class="hexagon-image w-full h-full object-cover transition-all duration-300 group-hover:scale-105">
+                    </div>
+                </div>
+                <!-- photu container-->
+            </div>
+        </section>
+
+        <!-- About -->
+        <section id="about" class="py-24">
+            <h2 class="section-header text-3xl font-bold mb-12">01. ~ whoami </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
+                <!-- leftside -->
+                <div class="md:col-span-2 text-gray-400 space-y-4">
+                    <p>
+                        I'm Aditya, a Bachelor of Computer Applications student with a deep passion for cybersecurity.
+                        My journey started with a simple curiosity for how things work, which has grown into a focused
+                        interest in network security and ethical hacking. I'm driven by the challenge of understanding
+                        and
+                        mitigating digital threats, and I actively apply my skills in Capture the Flag (CTF)
+                        competitions
+                    </p>
+                    <p>
+                        I have hands-on experience in penetration testing, vulnerability assessment, and incident
+                        response.
+                        My goal is to leverage my technical skills and problem-solving abilities to contribute to a
+                        secure digital environment.
+                        I thrive in dynamic, challenging situations and am always eager to learn and adapt.
+                    </p>
+
+                </div>
+                <!-- rightside -->
+                <div class="relative md:pl-12">
+                    <!-- vertical line -->
+                    <div class="absolute left-0 top-0 bottom-0 w-px bg-[var(--accent-color)] hidden md:block"
+                        style="box-shadow: 0 0 8px var(--accent-glow);"></div>
+                    <h3 class="text-2xl font-bold mb-6 text-gray-100">My Profiles</h3>
+                    <div class="space-y-4">
+                        <!-- linkedin  -->
+                        <a href="https://www.linkedin.com/in/hehe-aditya-is-cool/" target="_blank"
+                            class="flex items-center justify-center w-full px-4 py-3 border border-[var(--accent-color)] text-[var(--accent-color)] rounded-md hover:bg-[var(--accent-glow)] hover:text-black transition-all duration-300">
+                            <i data-lucide="linkedin" class="w-5 h-5 mr-3"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <!-- THM  -->
+                        <a href="https://tryhackme.com/p/ADITYAdoesit" target="_blank"
+                            class="flex items-center justify-center w-full px-4 py-3 border border-[var(--accent-color)] text-[var(--accent-color)] rounded-md hover:bg-[var(--accent-glow)] hover:text-black transition-all duration-300">
+                            <i data-lucide="target" class="w-5 h-5 mr-3"></i>
+                            <span>TryHackMe</span>
+                        </a>
+                        
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="py-24">
+            <h2 class="section-header text-3xl font-bold mb-16">02. ~/edu_journey/</h2>
+            <div class="container mx-auto px-4">
+                <div class="relative flex flex-col md:flex-row justify-between">
+                    <div class="hidden md:block absolute top-5 left-0 w-full h-0.5 bg-[var(--accent-color)]"
+                        style="box-shadow: 0 0 8px var(--accent-glow);"></div>
+                    <div class="md:hidden absolute top-0 left-5 w-0.5 h-full bg-[var(--accent-color)]"
+                        style="box-shadow: 0 0 8px var(--accent-glow);"></div>
+
+                    <div class="relative md:flex-1 mb-12 md:mb-0 pl-12 md:pl-0 md:text-center">
+                        <div
+                            class="absolute left-0 md:left-1/2 md:-translate-x-1/2 top-0 w-10 h-10 flex items-center justify-center">
+                            <div
+                                class="w-5 h-5 rounded-full bg-black border-2 border-[var(--accent-color)] glow-border z-10">
+                            </div>
+                        </div>
+                        <div class="md:mt-12">
+                            <p class="font-mono text-sm text-[var(--accent-color)]">Completed 2020</p>
+                            <h3 class="text-xl font-bold text-gray-100 mt-1">Sinhgad Spring Dale School, Pune</h3>
+                            <p class="text-gray-400">CBSE-10th</p>
+                        </div>
+                    </div>
+
+                    <div class="relative md:flex-1 mb-12 md:mb-0 pl-12 md:pl-0 md:text-center">
+                        <div
+                            class="absolute left-0 md:left-1/2 md:-translate-x-1/2 top-0 w-10 h-10 flex items-center justify-center">
+                            <div
+                                class="w-5 h-5 rounded-full bg-black border-2 border-[var(--accent-color)] glow-border z-10">
+                            </div>
+                        </div>
+                        <div class="md:mt-12">
+                            <p class="font-mono text-sm text-[var(--accent-color)]">2020 - 2022</p>
+                            <h3 class="text-xl font-bold text-gray-100 mt-1">Ashok Vidyalaya And Jr.College, Pune</h3>
+                            <p class="text-gray-400">HSC-12th, Science</p>
+                        </div>
+                    </div>
+
+                    <div class="relative md:flex-1 pl-12 md:pl-0 md:text-center">
+                        <div
+                            class="absolute left-0 md:left-1/2 md:-translate-x-1/2 top-0 w-10 h-10 flex items-center justify-center">
+                            <div
+                                class="w-5 h-5 rounded-full bg-black border-2 border-[var(--accent-color)] glow-border z-10">
+                            </div>
+                        </div>
+                        <div class="md:mt-12">
+                            <p class="font-mono text-sm text-[var(--accent-color)]">2023 - Present</p>
+                            <h3 class="text-xl font-bold text-gray-100 mt-1">Bharati Vidhyapeeth's Institute Of
+                                Management And Entrepreneurship Development</h3>
+                            <p class="text-gray-400">Bachelor of Computer Applications</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="py-24">
+            <h2 class="section-header text-3xl font-bold mb-12">03. ls ~/tools</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div
+                    class="bg-[#0a0a0a] p-6 rounded-lg border border-gray-800 hover:border-[var(--accent-color)] transition-colors duration-300">
+                    <h3 class="text-xl font-bold text-[var(--accent-color)] mb-4">Offensive Security</h3>
+                    <ul class="font-mono text-gray-300 space-y-2">
+                        <li class="flex items-center"><i data-lucide="chevron-right"
+                                class="w-4 h-4 mr-2 text-[var(--accent-color)]"></i>Penetration Testing</li>
+                        <li class="flex items-center"><i data-lucide="chevron-right"
+                                class="w-4 h-4 mr-2 text-[var(--accent-color)]"></i>Web App Security</li>
+                        <li class="flex items-center"><i data-lucide="chevron-right"
+                                class="w-4 h-4 mr-2 text-[var(--accent-color)]"></i>Metasploit Framework</li>
+                        <li class="flex items-center"><i data-lucide="chevron-right"
+                                class="w-4 h-4 mr-2 text-[var(--accent-color)]"></i>Burp Suite</li>
+                        <li class="flex items-center"><i data-lucide="chevron-right"
+                                class="w-4 h-4 mr-2 text-[var(--accent-color)]"></i>Social Engineering</li>
+                    </ul>
+                </div>
+                <div
+                    class="bg-[#0a0a0a] p-6 rounded-lg border border-gray-800 hover:border-[var(--accent-color)] transition-colors duration-300">
+                    <h3 class="text-xl font-bold text-[var(--accent-color)] mb-4">Defensive Security</h3>
+                    <ul class="font-mono text-gray-300 space-y-2">
+                        <li class="flex items-center"><i data-lucide="chevron-right"
+                                class="w-4 h-4 mr-2 text-[var(--accent-color)]"></i>SIEM (Splunk)</li>
+                        <li class="flex items-center"><i data-lucide="chevron-right"
+                                class="w-4 h-4 mr-2 text-[var(--accent-color)]"></i>Incident Response</li>
+                        <li class="flex items-center"><i data-lucide="chevron-right"
+                                class="w-4 h-4 mr-2 text-[var(--accent-color)]"></i>Firewall & IDS/IPS Config</li>
+                        <li class="flex items-center"><i data-lucide="chevron-right"
+                                class="w-4 h-4 mr-2 text-[var(--accent-color)]"></i>Threat Hunting</li>
+                        <li class="flex items-center"><i data-lucide="chevron-right"
+                                class="w-4 h-4 mr-2 text-[var(--accent-color)]"></i>Digital Forensics</li>
+                    </ul>
+                </div>
+                <div
+                    class="bg-[#0a0a0a] p-6 rounded-lg border border-gray-800 hover:border-[var(--accent-color)] transition-colors duration-300">
+                    <h3 class="text-xl font-bold text-[var(--accent-color)] mb-4">Tools</h3>
+                    <ul class="font-mono text-gray-300 space-y-2">
+                        <li class="flex items-center"><i data-lucide="chevron-right"
+                                class="w-4 h-4 mr-2 text-[var(--accent-color)]"></i>Python & Bash</li>
+                        <li class="flex items-center"><i data-lucide="chevron-right"
+                                class="w-4 h-4 mr-2 text-[var(--accent-color)]"></i>Nmap, Wireshark</li>
+                        <li class="flex items-center"><i data-lucide="chevron-right"
+                                class="w-4 h-4 mr-2 text-[var(--accent-color)]"></i>John the Ripper </li>
+                        <li class="flex items-center"><i data-lucide="chevron-right"
+                                class="w-4 h-4 mr-2 text-[var(--accent-color)]"></i>Hydra</li>
+                        <li class="flex items-center"><i data-lucide="chevron-right"
+                                class="w-4 h-4 mr-2 text-[var(--accent-color)]"></i>Gobuster</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!--  Certif start -->
+        <section id="certifications" class="py-24">
+            <h2 class="section-header text-3xl font-bold mb-12">04. openssl --show-certs</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+                <a href="https://coursera.org/share/5a27448ec2a300e806ee825150d34793" target="_blank"
+                    class="flex items-center bg-[#0a0a0a] p-4 rounded-lg border border-gray-800 hover:border-[var(--accent-color)] transition-all duration-300 group transform hover:-translate-y-1">
+                    <i data-lucide="award" class="w-8 h-8 mr-4 text-[var(--accent-color)] flex-shrink-0"></i>
+                    <div class="flex-grow">
+                        <h3 class="text-gray-100 group-hover:text-white">Google Cybersecurity Professional Certificate
+                        </h3>
+                        <p class="text-sm text-gray-500">Issued by Coursera</p>
+                    </div>
+                    <i data-lucide="external-link"
+                        class="w-5 h-5 ml-4 text-gray-500 group-hover:text-[var(--accent-color)] transition-colors duration-300 flex-shrink-0"></i>
+                </a>
+                <a href="https://coursera.org/share/d8336d964b1ef820282a054520bb0833" target="_blank"
+                    class="flex items-center bg-[#0a0a0a] p-4 rounded-lg border border-gray-800 hover:border-[var(--accent-color)] transition-all duration-300 group transform hover:-translate-y-1">
+                    <i data-lucide="award" class="w-8 h-8 mr-4 text-[var(--accent-color)] flex-shrink-0"></i>
+                    <div class="flex-grow">
+                        <h3 class="text-gray-100 group-hover:text-white">Python for Everybody Specialization</h3>
+                        <p class="text-sm text-gray-500">Issued by Coursera</p>
+                    </div>
+                    <i data-lucide="external-link"
+                        class="w-5 h-5 ml-4 text-gray-500 group-hover:text-[var(--accent-color)] transition-colors duration-300 flex-shrink-0"></i>
+                </a>
+                <a href="https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-YOKKWC4LC5.pdf" target="_blank"
+                    class="flex items-center bg-[#0a0a0a] p-4 rounded-lg border border-gray-800 hover:border-[var(--accent-color)] transition-all duration-300 group transform hover:-translate-y-1">
+                    <i data-lucide="award" class="w-8 h-8 mr-4 text-[var(--accent-color)] flex-shrink-0"></i>
+                    <div class="flex-grow">
+                        <h3 class="text-gray-100 group-hover:text-white">Pre Security Path</h3>
+                        <p class="text-sm text-gray-500">Issued by TryHackMe</p>
+                    </div>
+                    <i data-lucide="external-link"
+                        class="w-5 h-5 ml-4 text-gray-500 group-hover:text-[var(--accent-color)] transition-colors duration-300 flex-shrink-0"></i>
+                </a>
+                <a href="https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-OCFX5FSX9F.pdf" target="_blank"
+                    class="flex items-center bg-[#0a0a0a] p-4 rounded-lg border border-gray-800 hover:border-[var(--accent-color)] transition-all duration-300 group transform hover:-translate-y-1">
+                    <i data-lucide="award" class="w-8 h-8 mr-4 text-[var(--accent-color)] flex-shrink-0"></i>
+                    <div class="flex-grow">
+                        <h3 class="text-gray-100 group-hover:text-white">Cyber Security 101</h3>
+                        <p class="text-sm text-gray-500">Issued by TryHackMe</p>
+                    </div>
+                    <i data-lucide="external-link"
+                        class="w-5 h-5 ml-4 text-gray-500 group-hover:text-[var(--accent-color)] transition-colors duration-300 flex-shrink-0"></i>
+                </a>
+                <a href="https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-3XPF3GZCBW.pdf" target="_blank"
+                    class="flex items-center bg-[#0a0a0a] p-4 rounded-lg border border-gray-800 hover:border-[var(--accent-color)] transition-all duration-300 group transform hover:-translate-y-1">
+                    <i data-lucide="award" class="w-8 h-8 mr-4 text-[var(--accent-color)] flex-shrink-0"></i>
+                    <div class="flex-grow">
+                        <h3 class="text-gray-100 group-hover:text-white">Jr Penetration Tester</h3>
+                        <p class="text-sm text-gray-500">Issued by TryHackMe</p>
+                    </div>
+                    <i data-lucide="external-link"
+                        class="w-5 h-5 ml-4 text-gray-500 group-hover:text-[var(--accent-color)] transition-colors duration-300 flex-shrink-0"></i>
+                </a>
+                <a href="https://coursera.org/share/deb12bce04ee9a162cf7007564a176d6" target="_blank"
+                    class="flex items-center bg-[#0a0a0a] p-4 rounded-lg border border-gray-800 hover:border-[var(--accent-color)] transition-all duration-300 group transform hover:-translate-y-1">
+                    <i data-lucide="award" class="w-8 h-8 mr-4 text-[var(--accent-color)] flex-shrink-0"></i>
+                    <div class="flex-grow">
+                        <h3 class="text-gray-100 group-hover:text-white">Metasploit</h3>
+                        <p class="text-sm text-gray-500">Issued by Coursera</p>
+                    </div>
+                    <i data-lucide="external-link"
+                        class="w-5 h-5 ml-4 text-gray-500 group-hover:text-[var(--accent-color)] transition-colors duration-300 flex-shrink-0"></i>
+                </a>
+                <a href="https://coursera.org/share/d299311d1f44ddd37294104fcc72fdae" target="_blank"
+                    class="flex items-center bg-[#0a0a0a] p-4 rounded-lg border border-gray-800 hover:border-[var(--accent-color)] transition-all duration-300 group transform hover:-translate-y-1">
+                    <i data-lucide="award" class="w-8 h-8 mr-4 text-[var(--accent-color)] flex-shrink-0"></i>
+                    <div class="flex-grow">
+                        <h3 class="text-gray-100 group-hover:text-white">Analyze Network Traffic with TCPDump: Build a
+                            Logging Tool</h3>
+                        <p class="text-sm text-gray-500">Issued by Coursera</p>
+                    </div>
+                    <i data-lucide="external-link"
+                        class="w-5 h-5 ml-4 text-gray-500 group-hover:text-[var(--accent-color)] transition-colors duration-300 flex-shrink-0"></i>
+                </a>
+                <a href="https://trainings.internshala.com/view_certificate/8yg0v5ct350/4w4ykbx2d1y/" target="_blank"
+                    class="flex items-center bg-[#0a0a0a] p-4 rounded-lg border border-gray-800 hover:border-[var(--accent-color)] transition-all duration-300 group transform hover:-translate-y-1">
+                    <i data-lucide="award" class="w-8 h-8 mr-4 text-[var(--accent-color)] flex-shrink-0"></i>
+                    <div class="flex-grow">
+                        <h3 class="text-gray-100 group-hover:text-white">Web Development</h3>
+                        <p class="text-sm text-gray-500">Issued by Internshala</p>
+                    </div>
+                    <i data-lucide="external-link"
+                        class="w-5 h-5 ml-4 text-gray-500 group-hover:text-[var(--accent-color)] transition-colors duration-300 flex-shrink-0"></i>
+                </a>
+            </div>
+        </section>
+        <!-- certif section end -->
+
+        <!-- project section start -->
+        <section id="projects" class="py-24">
+            <h2 class="section-header text-3xl font-bold mb-12">05. ~ ls /projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Project Card 1 -->
+                <a href="#"
+                    class="block bg-[#0a0a0a] p-6 rounded-lg border border-gray-800 hover:border-[var(--accent-color)] transition-all duration-300 group transform hover:-translate-y-2">
+                    <div class="overflow-hidden rounded-md mb-4">
+                        <img src="https://placehold.co/600x400/000000/39FF14?text=Keylogger" alt="Keylogger Project"
+                            class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <h3
+                        class="text-xl font-bold text-gray-100 mb-2 group-hover:text-[var(--accent-color)] transition-colors duration-300">
+                        Advanced Python Keylogger</h3>
+                    <p class="text-gray-400 text-sm mb-4">A stealthy keylogger to understand system monitoring and data
+                        exfiltration techniques.</p>
+                    <div class="flex justify-end space-x-3">
+                        <i data-lucide="github"
+                            class="w-5 h-5 text-gray-500 group-hover:text-[var(--accent-color)] transition-colors duration-300"></i>
+                        <i data-lucide="external-link"
+                            class="w-5 h-5 text-gray-500 group-hover:text-[var(--accent-color)] transition-colors duration-300"></i>
+                    </div>
+                </a>
+
+                <!-- Project Card 2 -->
+                <a href="#"
+                    class="block bg-[#0a0a0a] p-6 rounded-lg border border-gray-800 hover:border-[var(--accent-color)] transition-all duration-300 group transform hover:-translate-y-2">
+                    <div class="overflow-hidden rounded-md mb-4">
+                        <img src="https://placehold.co/600x400/000000/39FF14?text=Vulnerability+Scanner"
+                            alt="Vulnerability Scanner Project"
+                            class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <h3
+                        class="text-xl font-bold text-gray-100 mb-2 group-hover:text-[var(--accent-color)] transition-colors duration-300">
+                        Vulnerability Scanner</h3>
+                    <p class="text-gray-400 text-sm mb-4">A network vulnerability scanner that identifies open ports and
+                        potential security risks.</p>
+                    <div class="flex justify-end space-x-3">
+                        <i data-lucide="github"
+                            class="w-5 h-5 text-gray-500 group-hover:text-[var(--accent-color)] transition-colors duration-300"></i>
+                        <i data-lucide="external-link"
+                            class="w-5 h-5 text-gray-500 group-hover:text-[var(--accent-color)] transition-colors duration-300"></i>
+                    </div>
+                </a>
+
+                <!-- Project Card 3 -->
+                <a href="#"
+                    class="block bg-[#0a0a0a] p-6 rounded-lg border border-gray-800 hover:border-[var(--accent-color)] transition-all duration-300 group transform hover:-translate-y-2">
+                    <div class="overflow-hidden rounded-md mb-4">
+                        <img src="https://placehold.co/600x400/000000/39FF14?text=Secure+File+Transfer"
+                            alt="Secure File Transfer Project"
+                            class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <h3
+                        class="text-xl font-bold text-gray-100 mb-2 group-hover:text-[var(--accent-color)] transition-colors duration-300">
+                        Secure File Transfer</h3>
+                    <p class="text-gray-400 text-sm mb-4">An application for transferring files securely between two
+                        machines using encryption.</p>
+                    <div class="flex justify-end space-x-3">
+                        <i data-lucide="github"
+                            class="w-5 h-5 text-gray-500 group-hover:text-[var(--accent-color)] transition-colors duration-300"></i>
+                        <i data-lucide="external-link"
+                            class="w-5 h-5 text-gray-500 group-hover:text-[var(--accent-color)] transition-colors duration-300"></i>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+        <!--projectsection end here-->
+
+        <section id="contact" class="py-24">
+            <h2 class="section-header text-3xl font-bold mb-12">06. connect ( )</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+                <div class="text-center md:text-left">
+                    <h3 class="text-4xl font-bold mb-4 text-gray-100">Get In Touch</h3>
+                    <p class="text-gray-400 mb-8">
+                        I'm currently open to new opportunities and collaborations. Whether you have a question, a
+                        project proposal, or just want to connect, feel free to reach out. My inbox is always open!
+                    </p>
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=adityaswaghmare20@gmail.com" target="_blank"
+                        class="inline-block px-8 py-4 border border-[var(--accent-color)] text-[var(--accent-color)] rounded-md text-lg hover:bg-[var(--accent-glow)] hover:text-black transition-all duration-300">
+                        Say Hello
+                    </a>
+
+                </div>
+
+                <div class="relative md:pl-12 mt-12 md:mt-0">
+                    <div class="absolute left-0 top-0 bottom-0 w-px bg-[var(--accent-color)] hidden md:block"
+                        style="box-shadow: 0 0 8px var(--accent-glow);"></div>
+                    <h3 class="text-2xl font-bold mb-6 text-gray-100">ping me!</h3>
+                    <div class="space-y-5 font-mono">
+                        <div class="flex items-center">
+                            <i data-lucide="mail" class="w-5 h-5 mr-4 text-[var(--accent-color)]"></i>
+                            <a href="mailto:adityaswaghmare20@gmail.com"
+                                class="text-gray-400 hover:text-[var(--accent-color)] transition-colors">adityaswaghmare20@gmail.com</a>
+                        </div>
+                        <div class="flex items-center">
+                            <i data-lucide="phone" class="w-5 h-5 mr-4 text-[var(--accent-color)]"></i>
+                            <span class="text-gray-400">+91 91759 80376</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i data-lucide="map-pin" class="w-5 h-5 mr-4 text-[var(--accent-color)]"></i>
+                            <span class="text-gray-400">Pune, Maharashtra</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="py-6">
+        <div class="flex justify-center items-center space-x-6 mb-4">
+            <a href="https://github.com/ADITYAdoesit" target="_blank"
+                class="text-gray-400 hover:text-[var(--accent-color)] transition-colors duration-300"
+                aria-label="GitHub Profile"><i data-lucide="github" class="w-6 h-6"></i></a>
+            <a href="https://www.linkedin.com/in/hehe-aditya-is-cool/" target="_blank"
+                class="text-gray-400 hover:text-[var(--accent-color)] transition-colors duration-300"
+                aria-label="LinkedIn Profile"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
+            <a href="https://tryhackme.com/p/ADITYAdoesit" target="_blank"
+                class="text-gray-400 hover:text-[var(--accent-color)] transition-colors duration-300"
+                aria-label="TryHackMe Profile"><i data-lucide="target" class="w-6 h-6"></i></a>
+        </div>
+        <p class="text-center text-gray-500 font-mono text-sm">
+            Designed & Built by Aditya Waghmare • © 2025 All rights reserved.
+
+        </p>
+    </footer>
+
+    <script src="script.js" defer></script>
+
+</body>
+
+</html>
