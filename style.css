@@ -14,7 +14,7 @@ body {
     background-color: var(--bg-color);
     transition: background-color 0.3s, color 0.3s;
     
-    background: linear-gradient(-45deg, #000000, #170101, #01150a, #170101);
+    background: linear-gradient(-90deg, #000000, #340202, #012f16, #012034);
     background-size: 400% 400%;
     animation: gradientBG 10s ease infinite;
 }
