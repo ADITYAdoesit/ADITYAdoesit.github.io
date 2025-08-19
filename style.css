@@ -4,7 +4,7 @@
     --accent-glow: rgba(57, 255, 20, 0.5);
     --accent-darker: #28b40f;
     --bg-color: #000000;
-    --text-color: #E0E0E0;
+    --text-color: #ffffff;
 }
 
 /* gradient bg*/
@@ -14,9 +14,9 @@ body {
     background-color: var(--bg-color);
     transition: background-color 0.3s, color 0.3s;
     
-    background: linear-gradient(-90deg, #000000, #340202, #012f16, #012034);
+    background: linear-gradient(-75deg, #067ed3,#6d0202, #13431c, #013b70);
     background-size: 400% 400%;
-    animation: gradientBG 10s ease infinite;
+    animation: gradientBG 5s ease infinite;
 }
 
 /* keyfrme for bg animation */
