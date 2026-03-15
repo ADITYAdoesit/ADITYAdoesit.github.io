@@ -10,7 +10,7 @@ body {
     color: var(--text-color);
     font-family: 'Space Grotesk', sans-serif;
     background-color: var(--bg-color);
-    background: linear-gradient(-75deg, #0d0c1f, #111, #071223, #140404);
+    background: linear-gradient(-75deg, #0c0f1a, #150505, #071223, #140404);
     background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
     min-height: 100vh;
@@ -33,7 +33,7 @@ body {
     background-size: 35px 35px;
     mask-image: radial-gradient(circle at center, black, transparent 90%);
     opacity: 0.3;
-    animation: gridMove 20s linear infinite;
+    animation: gridMove 30s linear infinite; animation-duration: 10s;
 }
 
 /* Cursor Glow - FIXED: Smaller and more subtle */
