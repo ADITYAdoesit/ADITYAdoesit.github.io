@@ -1,56 +1,85 @@
-
 :root {
     --accent-color: #39FF14;
-    --accent-glow: rgba(57, 255, 20, 0.5);
+    --accent-glow: rgba(57, 255, 20, 0.4);
     --accent-darker: #28b40f;
     --bg-color: #000000;
     --text-color: #ffffff;
 }
 
-/* gradient bg*/
 body {
     color: var(--text-color);
     font-family: 'Space Grotesk', sans-serif;
     background-color: var(--bg-color);
-    transition: background-color 0.3s, color 0.3s;
-    
-    background: linear-gradient(-75deg, #067ed3,#6d0202, #13431c, #013b70);
+    background: linear-gradient(-75deg, #0d0c1f, #111, #071223, #140404);
     background-size: 400% 400%;
-    animation: gradientBG 5s ease infinite;
+    animation: gradientBG 15s ease infinite;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
 }
 
-/* keyfrme for bg animation */
-@keyframes gradientBG {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+/* Depth Grid */
+.grid-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    background-image: 
+        linear-gradient(var(--accent-glow) 1px, transparent 1px),
+        linear-gradient(90deg, var(--accent-glow) 1px, transparent 1px);
+    background-size: 35px 35px;
+    mask-image: radial-gradient(circle at center, black, transparent 90%);
+    opacity: 0.3;
+    animation: gridMove 20s linear infinite;
 }
 
-/*  glow effect */
-.glow-text {
-    color: var(--accent-color);
-    text-shadow: 0 0 5px var(--accent-glow), 0 0 10px var(--accent-glow), 0 0 15px var(--accent-glow);
+/* Cursor Glow - FIXED: Smaller and more subtle */
+#cursor-glow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px; /* Reduced from 600px */
+    height: 300px;
+    background: radial-gradient(circle, rgba(57, 255, 20, 0.08) 0%, transparent 60%);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    transition: width 0.4s ease, height 0.4s ease, background 0.4s ease;
+    will-change: left, top;
 }
 
-.glow-border {
-    border-color: var(--accent-color);
-    box-shadow: 0 0 8px var(--accent-glow);
+header, main, footer {
+    position: relative;
+    z-index: 10;
 }
 
-/* hexagon image box*/
 .hexagon-image {
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     filter: drop-shadow(0 0 10px var(--accent-glow));
+    position: relative;
+    z-index: 20;
 }
 
+@keyframes gridMove {
+    from { background-position: 0 0; }
+    to { background-position: 50px 50px; }
+}
 
-/* Typing cursor effect */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.glow-text {
+    color: var(--accent-color);
+    text-shadow: 0 0 5px var(--accent-glow), 0 0 15px var(--accent-glow);
+}
+
 .typing-cursor {
     display: inline-block;
     width: 10px;
@@ -58,53 +87,13 @@ body {
     background-color: var(--accent-color);
     animation: blink 1s infinite;
     margin-left: 4px;
-    box-shadow: 0 0 5px var(--accent-glow);
 }
 
 @keyframes blink {
-
-    0%,
-    100% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0;
-    }
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }
 
-/* Section header styling */
-.section-header::after {
-    content: '';
-    display: block;
-    width: 50px;
-    height: 3px;
-    background-color: var(--accent-color);
-    margin-top: 8px;
-    box-shadow: 0 0 8px var(--accent-glow);
-}
-
-/* scrollbar */
-::-webkit-scrollbar {
-    width: 8px;
-}
-
-::-webkit-scrollbar-track {
-    background: #111;
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--accent-color);
-    border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: var(--accent-darker);
-}
-
-/* bgstyles */
-body {
-    color: var(--text-color);
-    background-color: var(--bg-color);
-    transition: background-color 0.3s, color 0.3s;
-}
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #000; }
+::-webkit-scrollbar-thumb { background: var(--accent-color); border-radius: 4px; }

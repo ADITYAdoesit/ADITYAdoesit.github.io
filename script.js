@@ -1,6 +1,29 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize Lucide Icons
     lucide.createIcons();
+
+    const glow = document.getElementById('cursor-glow');
+    
+    if (glow) {
+        window.addEventListener('mousemove', (e) => {
+            requestAnimationFrame(() => {
+                glow.style.left = `${e.clientX}px`;
+                glow.style.top = `${e.clientY}px`;
+            });
+        });
+
+        // Click effect is now more subtle as well
+        window.addEventListener('mousedown', () => {
+            glow.style.width = '400px'; 
+            glow.style.height = '400px';
+            glow.style.background = 'radial-gradient(circle, rgba(57, 255, 20, 0.12) 0%, transparent 70%)';
+        });
+
+        window.addEventListener('mouseup', () => {
+            glow.style.width = '300px';
+            glow.style.height = '300px';
+            glow.style.background = 'radial-gradient(circle, rgba(57, 255, 20, 0.08) 0%, transparent 60%)';
+        });
+    }
 
     // Mobile Menu Toggle
     const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -11,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Typing effect
+    // Typing Effect
     const typingTextElement = document.getElementById('typing-text');
     if (typingTextElement) {
         const phrases = [
@@ -26,7 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
         function type() {
             const currentPhrase = phrases[phraseIndex];
             if (isDeleting) {
-                // Deleting characters
                 typingTextElement.textContent = currentPhrase.substring(0, charIndex - 1);
                 charIndex--;
                 if (charIndex === 0) {
@@ -34,12 +56,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     phraseIndex = (phraseIndex + 1) % phrases.length;
                 }
             } else {
-                // Typing characters
                 typingTextElement.textContent = currentPhrase.substring(0, charIndex + 1);
                 charIndex++;
                 if (charIndex === currentPhrase.length) {
                     isDeleting = true;
-                    // Pause at the end of the phrase
                     setTimeout(type, 2000);
                     return;
                 }
@@ -50,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(type, 500);
     }
 
-    // Fade-in on scroll effect
+    // Fade-in on Scroll
     const sections = document.querySelectorAll('section');
     if (sections.length > 0) {
         const observer = new IntersectionObserver((entries) => {
