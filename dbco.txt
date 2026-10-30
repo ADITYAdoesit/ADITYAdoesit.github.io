@@ -1,0 +1,254 @@
+Q6. Create an index and measure query performance
+Aim: To create an index on a table and measure query execution time.
+Step 1: Create a sample table
+CREATE DATABASE IF NOT EXISTS college_db;
+USE college_db;
+
+CREATE TABLE employee (
+    emp_id INT PRIMARY KEY,
+    emp_name VARCHAR(50),
+    department VARCHAR(30),
+    salary DECIMAL(10,2)
+);
+
+INSERT INTO employee VALUES
+(1, 'Aditya', 'IT', 50000),
+(2, 'Rahul', 'HR', 35000),
+(3, 'Priya', 'IT', 65000),
+(4, 'Amit', 'Finance', 40000),
+(5, 'Neha', 'IT', 75000),
+(6, 'Rohan', 'HR', 30000);
+
+
+Step 2: Execute the query before indexing
+EXPLAIN SELECT * FROM employee
+WHERE department = 'IT';
+
+
+Expected output (key columns):
+type	possible_keys	key
+ALL	NULL	NULL
+
+type = ALL generally indicates a full table scan. The exact output can vary with MySQL's optimizer and table statistics.
+Step 3: Create an index
+CREATE INDEX idx_department
+ON employee(department);
+
+
+Output:
+Query OK, 0 rows affected
+
+
+Step 4: Check the query plan again
+EXPLAIN SELECT * FROM employee
+WHERE department = 'IT';
+
+
+The index idx_department may now appear in possible_keys or key. For a very small table, MySQL may still choose a full table scan.
+Step 5: Measure execution time
+In MySQL Workbench, enable the execution timing shown in the query result's Action Output panel, or use:
+SELECT * FROM employee
+WHERE department = 'IT';
+
+_________________________________________________________________
+
+Q7. Compare query results before and after indexing
+Aim: To compare query execution plans and performance before and after indexing.
+
+Use the employee table created in Q6.
+Step 1: Check performance before indexing
+If you have already created the index in Q6, remove it first:
+DROP INDEX idx_department ON employee;
+
+
+Run:
+EXPLAIN SELECT * FROM employee
+WHERE department = 'IT';
+
+
+The query will generally perform a full table scan for this small table.
+Step 2: Execute the query and record time
+SELECT * FROM employee
+WHERE department = 'IT';
+
+
+Output:
+emp_id	emp_name	department	salary
+1	Aditya	IT	50000.00
+3	Priya	IT	65000.00
+5	Neha	IT	75000.00
+
+Record the execution time shown in MySQL Workbench.
+Step 3: Create the index
+CREATE INDEX idx_department
+ON employee(department);
+
+
+Step 4: Execute the same query again
+EXPLAIN SELECT * FROM employee
+WHERE department = 'IT';
+
+SELECT * FROM employee
+WHERE department = 'IT';
+
+
+The returned records should be the same, although the execution plan may change.
+
+___________________________________________________________________________
+
+Q8. Stored Procedure to Select the First Five Records and Copy Them into Another Table
+Aim: To create a stored procedure that copies the first five records from one table into another.
+Step 1: Create the destination table
+USE college_db;
+
+CREATE TABLE employee_top5 (
+    emp_id INT,
+    emp_name VARCHAR(50),
+    department VARCHAR(30),
+    salary DECIMAL(10,2)
+);
+
+
+Step 2: Create the stored procedure
+DELIMITER //
+
+CREATE PROCEDURE copy_first_five()
+BEGIN
+    INSERT INTO employee_top5
+    SELECT *
+    FROM employee
+    ORDER BY emp_id
+    LIMIT 5;
+END //
+
+DELIMITER ;
+
+
+Step 3: Execute the procedure
+CALL copy_first_five();
+
+
+Expected output:
+Query OK, 5 rows affected
+
+
+Step 4: Display the copied records
+SELECT * FROM employee_top5;
+
+_____________________________________________________________________
+
+Q9. Create a Function to Identify the Highest-Salaried Employee
+Aim: To create a function that accepts an employee ID and name and checks whether that employee has the highest salary.
+
+We'll use the employee table created in Q6.
+Step 1: Create the function
+DELIMITER //
+
+CREATE FUNCTION check_highest_salary(
+    p_id INT,
+    p_name VARCHAR(50)
+)
+RETURNS VARCHAR(100)
+DETERMINISTIC
+READS SQL DATA
+BEGIN
+    DECLARE result_msg VARCHAR(100);
+    DECLARE emp_salary DECIMAL(10,2);
+    DECLARE max_salary DECIMAL(10,2);
+
+    SELECT salary INTO emp_salary
+    FROM employee
+    WHERE emp_id = p_id
+      AND emp_name = p_name
+    LIMIT 1;
+
+    SELECT MAX(salary) INTO max_salary
+    FROM employee;
+
+    IF emp_salary IS NULL THEN
+        SET result_msg = 'Employee not found';
+    ELSEIF emp_salary = max_salary THEN
+        SET result_msg = 'Employee has the highest salary';
+    ELSE
+        SET result_msg = 'Employee does not have the highest salary';
+    END IF;
+
+    RETURN result_msg;
+END //
+
+DELIMITER ;
+
+
+Step 2: Call the function
+Check Neha, whose employee ID is 5:
+SELECT check_highest_salary(5, 'Neha') AS Result;
+
+
+Output:
+Result
+Employee has the highest salary
+
+Check Rahul:
+SELECT check_highest_salary(2, 'Rahul') AS Result;
+
+_______________________________________________________________________
+
+Q10. Create a Function to Extract a Part of a Name and Copy It into Another Table
+Aim: To extract a part of a person's name using a function and insert that part into another table's column.
+
+For this example, we'll extract the first name from a full name.
+Step 1: Create the source table
+CREATE TABLE person (
+    person_id INT PRIMARY KEY,
+    full_name VARCHAR(100)
+);
+
+INSERT INTO person VALUES
+(1, 'Aditya Waghmare'),
+(2, 'Rahul Sharma'),
+(3, 'Priya Patil');
+
+
+Step 2: Create the destination table
+CREATE TABLE extracted_names (
+    person_id INT,
+    first_name VARCHAR(50)
+);
+
+
+Step 3: Create the function
+DELIMITER //
+
+CREATE FUNCTION get_first_name(
+    p_full_name VARCHAR(100)
+)
+RETURNS VARCHAR(50)
+DETERMINISTIC
+NO SQL
+BEGIN
+    RETURN SUBSTRING_INDEX(p_full_name, ' ', 1);
+END //
+
+DELIMITER ;
+
+
+Step 4: Test the function
+SELECT get_first_name('Aditya Waghmare') AS First_Name;
+
+
+Output:
+First_Name
+Aditya
+
+Step 5: Copy the extracted names into another table
+INSERT INTO extracted_names (person_id, first_name)
+SELECT person_id, get_first_name(full_name)
+FROM person;
+
+
+Expected output:
+Query OK, 3 rows affected
+
+
+Step 6: Display the final table
+SELECT * FROM extracted_names;
